@@ -2,10 +2,10 @@
 
 #This is crud application based on React redux and express server
 
-Installation Instruction:
--clone the project
--cd into the clone folder
-- run npm install
+# Installation Instruction:
+ - clone the project
+ - cd into the clone folder
+ - run npm install
 
 # To run this app:
  - npm run dev-start
