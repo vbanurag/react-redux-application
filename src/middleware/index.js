@@ -1,4 +1,4 @@
-import thungMiddleware from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 import { logger } from './logger.middleware';
 
-export const middleware = [thungMiddleware, logger];
+export const middleware = [thunkMiddleware, logger];

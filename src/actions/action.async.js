@@ -9,11 +9,14 @@ import {
     UPDATE_PRODUCT_ONSUCCESS,
     UPDATE_PRODUCT_ONERROR
 } from './action';
+import {
+    APIURL
+} from './../config/config.url.constant';
 
 export function fetchUser() {
     return (dispatch) => {
         dispatch(FETCH_USER_START());
-        fetch('http://anuragsharma.com:4000/api/user')
+        fetch(APIURL)
             .then(response => response.json())
             .then(users => {
                 dispatch(FETCH_USER_SUCCES(users))
@@ -25,7 +28,7 @@ export function fetchUser() {
 }
 export function addUser() {
     return (dispatch) => {
-        fetch('http://anuragsharma.com:4000/api/user', {
+        fetch(APIURL, {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
@@ -46,7 +49,7 @@ export function addUser() {
 export function fetchProducts() {
     return (dispatch) => {
         dispatch(FETCH_PRODUCT_START());
-        fetch('http://anuragsharma.com:4000/api/product', {
+        fetch(APIURL, {
             method: 'get'
         }).then(res => res.json())
             .then( products => {
@@ -60,7 +63,7 @@ export function fetchProducts() {
 export function deleteProduct(productId){
     return (dispatch) => {
         dispatch(DELTE_PRODUCT_INIT());
-        fetch('http://anuragsharma.com:4000/api/product',{
+        fetch(APIURL,{
             method:'delete',
             headers: {
                 'Accept': 'application/json',
@@ -81,7 +84,7 @@ export function deleteProduct(productId){
 export function updateProduct(product) {
     return (dispatch) => {
         dispatch(UPDATE_PRODUCT_INIT())
-        fetch('http://anuragsharma.com:4000/api/product', {
+        fetch(APIURL, {
             method: 'put',
             headers: {
                 'Accept': 'application/json',
